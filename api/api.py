@@ -1,8 +1,8 @@
 # test
 
 from fastapi import FastAPI
-import uvicorn
-import pandas as pd
+# import uvicorn
+# import pandas as pd
 import pickle
 
 # Set config --> No óptimo
@@ -30,19 +30,20 @@ def get_iris(
     ):
 
     # Build dataset
-    data_predict = pd.DataFrame.from_dict(
-        data = {
-         'sepal length (cm)' : [sepal_length],
-         'sepal width (cm)' : [sepal_width],
-         'petal length (cm)': [petal_length],
-         'petal width (cm)' : [petal_width]  
-        }
-    )
+    # data_predict = pd.DataFrame.from_dict(
+    #     data = {
+    #      'sepal length (cm)' : [sepal_length],
+    #      'sepal width (cm)' : [sepal_width],
+    #      'petal length (cm)': [petal_length],
+    #      'petal width (cm)' : [petal_width]  
+    #     }
+    # )
 
     # Transform dataset
-    data_predict_transf = transformer.transform(data_predict)
+    # data_predict_transf = transformer.transform(data_predict)
 
     # Make predictions
-    predictions = model.predict(data_predict_transf)
-#    return [(sepal_length+sepal_width+petal_length+petal_width)/4]
-    return predictions.tolist()
+    # predictions = model.predict(data_predict_transf)
+    
+    return [(sepal_length+sepal_width+petal_length+petal_width)/4]
+    # return predictions.tolist()
